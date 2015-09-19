@@ -45,7 +45,7 @@ The median of the total steps taken per day (without NA or imputed values) is 10
 # num steps for each interval avg'ed across all days:
 avgSteps <- aggregate(steps ~ interval, data = stepData, FUN = mean)
 plot(steps ~ interval, data = avgSteps,type = "l", main="Average Number of Steps by Time Interval",
-     xlab = "time (minutes)", ylab="number of steps")
+     xlab = "Time (minutes)", ylab="Average Number of Steps")
 ```
 
 ![](PA1_template_files/figure-html/avgDailyPattern plot-1.png) 
@@ -117,7 +117,7 @@ summary(stepsFullImputed)
 
 ```r
 totSteps_Day_imputed <- aggregate(steps ~ date, data=stepsFullImputed,FUN = sum)
-hist(totSteps_Day_imputed$steps, main="Frequency of Total Number of Steps Taken Each Day", 
+hist(totSteps_Day_imputed$steps, main="Frequency of Total Number of Steps Taken Each Day with Imputed Values", 
      xlab="Total Number of Steps")
 ```
 
@@ -129,7 +129,7 @@ hist(totSteps_Day_imputed$steps, main="Frequency of Total Number of Steps Taken 
 totSteps_mean_imp <- mean(totSteps_Day_imputed$steps)
 totSteps_med_imp <- median(totSteps_Day_imputed$steps)
 ```
-The mean of the total steps taken per day *with* imputed imputed values is 1.0766189\times 10^{4}.  
+The mean of the total steps taken per day *with* imputed values is 1.0766189\times 10^{4}.  
 The median of the total steps taken per day *with* imputed values is 1.0766189\times 10^{4}.  
 (The mean and median of total steps without imputed values are 1.0766189\times 10^{4} and 10765, respectively).  
   
